@@ -1,4 +1,4 @@
-﻿# Brutto-Netto Auswahl AT
+# Brutto-Netto Auswahl AT
 
 Chrome-Extension fuer schnelle oesterreichische Brutto-Netto-Schaetzungen direkt auf Webseiten. Diese Version rechnet lokal mit einer Formel fuer 2026 und fuehrt keine Hintergrundanfragen an externe Brutto-Netto-Rechner aus.
 
@@ -7,7 +7,7 @@ Chrome-Extension fuer schnelle oesterreichische Brutto-Netto-Schaetzungen direkt
 1. Chrome oeffnen und `chrome://extensions` aufrufen.
 2. Rechts oben `Entwicklermodus` aktivieren.
 3. `Entpackte Erweiterung laden` waehlen.
-4. Diesen Ordner auswaehlen.
+4. Den entpackten Projektordner dieser Extension auswaehlen.
 
 Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Auswahl AT` auf den Reload-Button klicken.
 
