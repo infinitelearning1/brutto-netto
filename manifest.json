@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Brutto-Netto Auswahl AT",
-  "description": "Schaetzt markierte oesterreichische Brutto-Gehaelter lokal mit einer 2026-Formel.",
+  "description": "Schätzt markierte österreichische Brutto-Gehälter lokal mit einer 2026-Formel.",
   "version": "2.0.0",
   "minimum_chrome_version": "114",
   "permissions": [

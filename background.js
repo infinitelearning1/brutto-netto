@@ -1,9 +1,9 @@
-﻿importScripts("payroll-at-2026.js", "core.js");
+importScripts("payroll-at-2026.js", "core.js");
 
 const CORE = self.GrossNetAT;
 const PAYROLL = self.ATPayroll2026;
 const MENU_ID = "gross-net-at-selection";
-const DEFAULT_MENU_TITLE = "Netto schaetzen";
+const DEFAULT_MENU_TITLE = "Netto schätzen";
 const resultByTab = new Map();
 const currentSignatureByTab = new Map();
 let latestResult = null;
@@ -55,7 +55,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       };
       const signature = payloadSignature(payload);
       currentSignatureByTab.set(tab.id, signature);
-      updateMenu({ ok: true, title: "Netto wird geschaetzt..." });
+      updateMenu({ ok: true, title: "Netto wird geschätzt..." });
       return calculateForPayload(payload, { tab }).then((result) => ({ payload, result, signature }));
     })
     .then(({ payload, result, signature }) => {
@@ -120,7 +120,7 @@ function handleSelectionChanged(message, sender) {
 
   updateMenu({
     ok: true,
-    title: "Netto wird geschaetzt..."
+    title: "Netto wird geschätzt..."
   });
 
   calculateForPayload(payload, sender)

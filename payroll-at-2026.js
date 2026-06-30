@@ -75,7 +75,7 @@
       stand: "Formel 2026",
       assumptions: [
         "Arbeitnehmer/in oder Angestellte/r",
-        "14 gleich hohe Bruttobezuege",
+        "14 gleich hohe Bruttobezüge",
         "Werbungskostenpauschale 132 EUR",
         "Verkehrsabsetzbetrag 496 EUR",
         "SV- und Lohnsteuertarif 2026"

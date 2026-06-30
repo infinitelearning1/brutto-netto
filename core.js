@@ -1,4 +1,4 @@
-﻿(function initCore(root) {
+(function initCore(root) {
   "use strict";
 
   var DEFAULT_SETTINGS = {
@@ -22,12 +22,12 @@
 
   var BUNDESLAND_OPTIONS = [
     ["0", "Wien"],
-    ["1", "Niederoesterreich"],
-    ["2", "Oberoesterreich"],
+    ["1", "Niederösterreich"],
+    ["2", "Oberösterreich"],
     ["3", "Burgenland"],
     ["4", "Salzburg"],
     ["5", "Steiermark"],
-    ["6", "Kaernten"],
+    ["6", "Kärnten"],
     ["7", "Tirol"],
     ["8", "Vorarlberg"]
   ];
@@ -440,9 +440,9 @@
 
   function buildDisplayModel(detection, akResult) {
     var averageMonthly = akResult.net.annual !== null ? roundMoney(akResult.net.annual / 12) : null;
-    var sourceLabel = akResult.source === "formula-at-2026" ? "Netto Schaetzung" : "Referenz-Netto";
+    var sourceLabel = akResult.source === "formula-at-2026" ? "Netto-Schätzung" : "Referenz-Netto";
     var title = sourceLabel + ": " + formatEuro(akResult.net.ongoing) + " mtl. laufend | " + formatEuro(akResult.net.annual) + " Jahr";
-    var periodLabel = detection.period === "annual" ? "jaehrlich" : "monatlich";
+    var periodLabel = detection.period === "annual" ? "jährlich" : "monatlich";
     var lines = [
       "Brutto erkannt: " + formatEuro(detection.amount) + " " + periodLabel,
       "Netto laufend: " + formatEuro(akResult.net.ongoing) + " pro Monat",
@@ -457,9 +457,9 @@
     if (akResult.warnings && akResult.warnings.length) {
       lines.push("Hinweis: " + akResult.warnings.join(" "));
     }
-    lines.push("Annahme: 14 gleich hohe Bruttobezuege, Standardwerte aus den Optionen.");
+    lines.push("Annahme: 14 gleich hohe Bruttobezüge, Standardwerte aus den Optionen.");
     if (akResult.source === "formula-at-2026") {
-      lines.push("Offline-Formel; Ergebnis ohne Gewaehr.");
+      lines.push("Offline-Formel; Ergebnis ohne Gewähr.");
     }
 
     return {

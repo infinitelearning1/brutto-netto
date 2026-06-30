@@ -1,4 +1,4 @@
-﻿(function initContentScript() {
+(function initContentScript() {
   "use strict";
 
   var selectionTimer = null;
@@ -145,7 +145,7 @@
     close.type = "button";
     close.className = "gross-net-close";
     close.textContent = "x";
-    close.title = "Schliessen";
+    close.title = "Schließen";
     close.addEventListener("click", function closeOverlay() {
       panel.remove();
     });
