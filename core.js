@@ -459,7 +459,7 @@
     }
     lines.push("Annahme: 14 gleich hohe Bruttobezüge, Standardwerte aus den Optionen.");
     if (akResult.source === "formula-at-2026") {
-      lines.push("Offline-Formel; Ergebnis ohne Gewähr.");
+      lines.push("Unverbindliche Schätzung; keine Gewähr oder Haftung für Richtigkeit, Vollständigkeit oder Aktualität.");
     }
 
     return {

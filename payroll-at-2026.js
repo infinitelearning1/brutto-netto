@@ -30,9 +30,9 @@
       { upTo: 620, rate: 0 },
       { upTo: 25000, rate: 0.06 },
       { upTo: 50000, rate: 0.27 },
-      { upTo: 83333, rate: 0.3575 },
-      { upTo: Infinity, rate: 0.50 }
+      { upTo: 83333, rate: 0.3575 }
     ],
+    specialReducedTaxLimit: 83333,
     specialTaxFreeLimit: 2100
   };
 
@@ -54,7 +54,8 @@
     var specialSv = calculateSpecialSocialInsurance(grossOngoing, grossBonus13, grossBonus14);
 
     var annualTaxable = Math.max(0, roundMoney((grossOngoingExact - svOngoing) * 12 - CONSTANTS.employeeExpenseAllowance - annualFreibetrag(settings)));
-    var annualOngoingTax = Math.max(0, roundMoney(incomeTax(annualTaxable) - CONSTANTS.employeeCredit - familyBonus(settings)));
+    var annualTaxCredits = CONSTANTS.employeeCredit + familyBonus(settings);
+    var annualOngoingTax = Math.max(0, roundMoney(incomeTax(annualTaxable) - annualTaxCredits));
     var taxOngoing = roundMoney(annualOngoingTax / 12);
 
     var taxableBonus13 = roundMoney(grossBonus13 - specialSv.bonus13);
@@ -63,8 +64,8 @@
     var taxBonus13 = 0;
     var taxBonus14 = 0;
     if (specialTaxableTotal > CONSTANTS.specialTaxFreeLimit) {
-      taxBonus13 = roundMoney(specialTaxIncrement(0, taxableBonus13));
-      taxBonus14 = roundMoney(specialTaxIncrement(taxableBonus13, taxableBonus14));
+      taxBonus13 = roundMoney(specialTaxIncrement(0, taxableBonus13, annualTaxable, annualTaxCredits));
+      taxBonus14 = roundMoney(specialTaxIncrement(taxableBonus13, taxableBonus14, annualTaxable, annualTaxCredits));
     }
 
     var socialInsuranceAnnual = roundMoney(svOngoing * 12 + specialSv.bonus13 + specialSv.bonus14);
@@ -140,10 +141,26 @@
     return progressiveTax(taxableAnnualIncome, CONSTANTS.taxBands);
   }
 
-  function specialTaxIncrement(alreadyTaxedBase, nextBase) {
-    var before = progressiveTax(alreadyTaxedBase, CONSTANTS.specialTaxBands);
-    var after = progressiveTax(alreadyTaxedBase + nextBase, CONSTANTS.specialTaxBands);
-    return roundMoney(after - before);
+  function specialTaxIncrement(alreadyTaxedBase, nextBase, annualTaxable, annualTaxCredits) {
+    var limit = CONSTANTS.specialReducedTaxLimit;
+    var reducedBefore = Math.min(alreadyTaxedBase, limit);
+    var reducedAfter = Math.min(alreadyTaxedBase + nextBase, limit);
+    var reducedTax = progressiveTax(reducedAfter, CONSTANTS.specialTaxBands) - progressiveTax(reducedBefore, CONSTANTS.specialTaxBands);
+    var overflowBefore = Math.max(0, alreadyTaxedBase - limit);
+    var overflowAfter = Math.max(0, alreadyTaxedBase + nextBase - limit);
+    var overflowInThisPayment = roundMoney(overflowAfter - overflowBefore);
+    return roundMoney(reducedTax + currentMonthTariffIncrement(annualTaxable, overflowInThisPayment, annualTaxCredits));
+  }
+
+  function currentMonthTariffIncrement(annualTaxable, extraTaxableInMonth, annualTaxCredits) {
+    if (!extraTaxableInMonth) {
+      return 0;
+    }
+    var base = Math.max(0, Number(annualTaxable) || 0);
+    var credits = Math.max(0, Number(annualTaxCredits) || 0);
+    var before = Math.max(0, incomeTax(base) - credits);
+    var after = Math.max(0, incomeTax(roundMoney(base + extraTaxableInMonth * 12)) - credits);
+    return roundMoney((after - before) / 12);
   }
 
   function progressiveTax(amount, bands) {

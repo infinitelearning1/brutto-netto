@@ -13,7 +13,6 @@ Chrome-Extension für schnelle österreichische Brutto-Netto-Schätzungen direkt
 
 Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Auswahl AT` auf den Reload-Button klicken.
 
-
 ## Nutzung
 
 1. Eine Gehaltszahl oder einen Gehaltsabschnitt auf einer Webseite markieren, z. B. `3.500`, `EUR 3.700,-- brutto`, `40.000`, `EUR 55.000 p.a.`, `35k`, `EUR 3.000 x 14`, `3.500 bis 5.000 EUR monatlich` oder einen Absatz mit `Bruttomonatsgehalt` / `Jahresbruttogehalt`.
@@ -48,3 +47,7 @@ Standardmäßig wird gerechnet als:
 - keine Pendlerpauschale
 
 Arbeitsverhältnis, Bundesland und Schwellenwerte für Monats-/Jahreserkennung können in den Extension-Optionen angepasst werden.
+
+## Haftungsausschluss
+
+Die Ergebnisse sind unverbindliche Schätzwerte für den beschriebenen Standardfall. Trotz sorgfältiger Umsetzung kann keine Gewähr für Richtigkeit, Vollständigkeit oder Aktualität übernommen werden. Aus falschen, unvollständigen oder veralteten Berechnungen können keine Ansprüche abgeleitet werden; eine Haftung ist ausgeschlossen, soweit gesetzlich zulässig. Für verbindliche Auskünfte sind die zuständigen Stellen oder eine fachkundige Beratung maßgeblich.
