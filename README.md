@@ -13,7 +13,6 @@ Chrome-Extension für schnelle österreichische Brutto-Netto-Schätzungen direkt
 
 Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Auswahl AT` auf den Reload-Button klicken.
 
-Hinweis: Chrome erlaubt Erweiterungen außerhalb des Chrome Web Store nur als entpackte Erweiterung im Entwicklermodus. Für eine echte Ein-Klick-Installation wäre später eine Veröffentlichung im Chrome Web Store nötig.
 
 ## Nutzung
 
