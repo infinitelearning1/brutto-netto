@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Brutto-Netto Auswahl AT",
+  "name": "Brutto-Netto Rechner AT",
   "description": "Schätzt markierte österreichische Brutto-Gehälter lokal mit einer 2026-Formel.",
   "version": "2.0.0",
   "minimum_chrome_version": "114",
@@ -27,7 +27,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Brutto-Netto Auswahl AT"
+    "default_title": "Brutto-Netto Rechner AT"
   },
   "options_page": "options.html"
 }

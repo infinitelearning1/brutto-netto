@@ -1,4 +1,4 @@
-# Brutto-Netto Auswahl AT
+# Brutto-Netto Rechner AT
 
 Chrome-Extension für schnelle österreichische Brutto-Netto-Schätzungen direkt auf Webseiten. Diese Version rechnet lokal mit einer Formel für 2026 und führt keine Hintergrundanfragen an externe Brutto-Netto-Rechner aus.
 
@@ -11,7 +11,7 @@ Chrome-Extension für schnelle österreichische Brutto-Netto-Schätzungen direkt
 5. `Entpackte Erweiterung laden` wählen.
 6. Den entpackten Projektordner auswählen.
 
-Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Auswahl AT` auf den Reload-Button klicken.
+Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Rechner AT` auf den Reload-Button klicken.
 
 ## Nutzung
 
