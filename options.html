@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brutto-Netto Optionen</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Brutto-Netto Optionen</h1>
+    <form id="settings">
+      <label>
+        Arbeitsverhaeltnis
+        <select name="arbeitsverhaeltnis" id="arbeitsverhaeltnis"></select>
+      </label>
+
+      <label>
+        Beschaeftigungsort
+        <select name="bundesland" id="bundesland"></select>
+      </label>
+
+      <label>
+        Ab dieser Brutto-Zahl als Jahresgehalt behandeln
+        <input type="number" min="1000" step="500" name="annualThreshold" id="annualThreshold">
+      </label>
+
+      <label>
+        Bis zu dieser Brutto-Zahl als Monatsgehalt behandeln
+        <input type="number" min="1000" step="500" name="monthlyThreshold" id="monthlyThreshold">
+      </label>
+
+      <fieldset>
+        <legend>Standard-Annahmen</legend>
+        <p>Keine Alleinverdiener-/Alleinerzieher-Absetzbetrag, kein Familienbonus, kein Sachbezug, kein Freibetrag und keine Pendlerpauschale.</p>
+        <p>Die Berechnung laeuft lokal mit der Formel-v2 fuer 2026.</p>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit">Speichern</button>
+        <span id="saved" role="status"></span>
+      </div>
+    </form>
+  </main>
+  <script src="core.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
