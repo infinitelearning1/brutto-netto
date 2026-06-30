@@ -7,8 +7,7 @@ Chrome-Extension fuer schnelle oesterreichische Brutto-Netto-Schaetzungen direkt
 1. Chrome oeffnen und `chrome://extensions` aufrufen.
 2. Rechts oben `Entwicklermodus` aktivieren.
 3. `Entpackte Erweiterung laden` waehlen.
-4. Diesen Ordner auswaehlen:
-   `C:\Users\Samuel\Desktop\bruttonetto-v2-formel`
+4. Diesen Ordner auswaehlen.
 
 Nach Updates an der Extension auf `chrome://extensions` beim Eintrag `Brutto-Netto Auswahl AT` auf den Reload-Button klicken.
 
